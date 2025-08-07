@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Product Preview Card Component</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,25 +14,30 @@
   </head>
   <body>
     <main class="container">
-      <article class="product-card">
-        <div class="product-image">
+      <section class="product-card" aria-label="Product preview card">
+        <figure class="product-image">
           <picture>
             <source
               media="(min-width: 768px)"
-              srcset="
-                https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80
-              "
+              srcset="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
             />
             <img
-              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-              alt="Gabrielle Essence Eau De Parfum perfume bottle"
+              src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+              alt="Gabrielle Essence Eau De Parfum perfume bottle with gold cap and elegant branding"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
             />
           </picture>
-        </div>
+          <figcaption class="sr-only">
+            Image of Gabrielle Essence Eau De Parfum perfume bottle
+          </figcaption>
+        </figure>
 
         <div class="product-content">
           <header class="product-header">
-            <p class="product-category">Perfume</p>
+            <p class="product-category" aria-label="Category: Perfume">Perfume</p>
             <h1 class="product-title">Gabrielle Essence Eau De Parfum</h1>
           </header>
 
@@ -42,30 +47,37 @@
           </p>
 
           <div class="product-pricing">
-            <span class="current-price" aria-label="Current price"
+            <span class="current-price" aria-label="Current price: $149.99"
               >$149.99</span
             >
-            <span class="original-price" aria-label="Original price"
-              >$169.99</span
+            <del class="original-price" aria-label="Original price: $169.99"
+              >$169.99</del
             >
           </div>
 
-          <button class="add-to-cart-btn" type="button">
+          <button
+            class="add-to-cart-btn"
+            type="button"
+            aria-label="Add Gabrielle Essence Eau De Parfum to cart"
+          >
             <svg
               width="15"
               height="16"
               xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
+              role="img"
+              aria-labelledby="cartIconTitle"
+              focusable="false"
+              fill="currentColor"
             >
+              <title id="cartIconTitle">Shopping cart icon</title>
               <path
                 d="m14.383 10.388 1.234.12c.26.003.49-.02.69-.078.21-.054.38-.13.53-.228a1.53 1.53 0 0 0 .397-.36c.11-.15.17-.32.17-.51 0-.17-.05-.33-.15-.48a1.76 1.76 0 0 0-.39-.36c-.16-.1-.33-.17-.51-.22-.18-.05-.37-.08-.57-.08-.19 0-.38.03-.57.08-.18.05-.35.12-.51.22-.16.1-.3.22-.39.36-.1.15-.15.31-.15.48 0 .19.06.36.17.51.11.15.25.27.4.36.15.1.32.17.51.22.2.06.4.09.61.09.2 0 .4-.03.6-.09.2-.05.37-.12.52-.22l1.56 1.56a.75.75 0 1 0 1.06-1.06L14.38 10.39ZM1.75 3.75v1.5h1.92l3.46 8.18c-.15.26-.23.56-.23.87 0 .17.04.33.11.48.08.16.19.3.33.42.15.12.32.21.51.27.2.06.4.09.61.09s.42-.03.61-.09c.2-.06.37-.15.52-.27.14-.12.26-.26.33-.42.07-.15.11-.31.11-.48 0-.31-.08-.61-.23-.87L9.75 5.25H1.75Zm3.85 0h2.4v1.5H5.6V3.75Zm4.9 0v1.5h2.4V3.75h-2.4Z"
-                fill="currentColor"
               />
             </svg>
             Add to Cart
           </button>
         </div>
-      </article>
+      </section>
     </main>
   </body>
 </html>
